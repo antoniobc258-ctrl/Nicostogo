@@ -268,7 +268,7 @@ export default function OptionsModal({
             {(prod.opciones?.orilla || ["Normal"]).map((orilla) => {
               const isSelected = (data.orilla || "Normal") === orilla;
               const isRellena = orilla === "Rellena";
-              const idx = Math.max(0, tamaños.indexOf(tam));
+              const idx = Math.max(0, tamanos.indexOf(tam));
               const precioBaseNormal = Array.isArray(prod.precio)
                 ? (prod.precio[idx] ?? prod.precio[0] ?? 0)
                 : 0;
