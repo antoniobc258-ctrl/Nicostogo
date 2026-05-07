@@ -90,57 +90,52 @@ export default function CartDrawer({
     if (isEmpty) return "";
 
     const nombreTrim = (nombre || "").trim() || "Cliente";
+    const formatOptionLabel = (option) => {
+      if (typeof option !== "string") return option;
+      return option
+        .replace(/^tamano:/i, "Tamaño:")
+        .replace(/^proteina:/i, "Proteína:")
+        .replace(/^preparacionHuevo:/i, "Preparación de huevo:")
+        .replace(/^preparacion:/i, "Preparación:")
+        .replace(/^acompanamiento:/i, "Acompañamiento:");
+    };
 
-    let msg = `🍕 *NUEVO PEDIDO NICOS*\n\n`;
-    msg += `👤 *Cliente:* ${nombreTrim}\n`;
-    msg += `🚚 *Entrega:* ${entrega || "Por definir"}\n`;
+    let msg = `NUEVO PEDIDO NICOS\n\n`;
+    msg += `Cliente: ${nombreTrim}\n`;
+    msg += `Entrega: ${entrega || "Por definir"}\n`;
 
     if (entrega === "Entrega en pueblo (domicilio variable)" && (zonaRef || "").trim()) {
-      msg += `📍 *Zona / referencia:* ${zonaRef.trim()}\n`;
+      msg += `Zona / referencia: ${zonaRef.trim()}\n`;
     }
 
-    if ((notas || "").trim()) {
-      msg += `💬 *Nota general:* ${notas.trim()}\n`;
-    }
-
-    msg += `\n━━━━━━━━━━━━━━\n`;
-    msg += `🛒 *PRODUCTOS*\n\n`;
+    msg += `Nota: ${(notas || "").trim() || "Sin nota"}\n\n`;
+    msg += `PRODUCTOS:\n`;
 
     items.forEach((it, index) => {
-      msg += `${index + 1}) *${it.nombre}* x${it.qty}\n`;
+      msg += `${index + 1}. ${it.nombre} x${it.qty}\n`;
 
       if (it.opciones?.length) {
         it.opciones.forEach((o) => {
-          msg += `   • ${o}\n`;
+          msg += `   - ${formatOptionLabel(o)}\n`;
         });
       }
 
       if (it.nota) {
-        msg += `   📝 Nota: ${it.nota}\n`;
+        msg += `   - Nota: ${it.nota}\n`;
       }
 
-      msg += `   💲 Importe: ${fmt.format((it.precio || 0) * (it.qty || 0))}\n\n`;
+      msg += `   - Importe: ${fmt.format((it.precio || 0) * (it.qty || 0))}\n`;
+      msg += `\n`;
     });
 
-    msg += `━━━━━━━━━━━━━━\n`;
-    msg += `🧾 *RESUMEN*\n\n`;
+    msg += `RESUMEN:\n`;
     msg += `Subtotal: ${fmt.format(subtotal)}\n`;
 
     if (discounts?.length) {
-      msg += `\n🎉 *Promos / descuentos:*\n`;
-      discounts.forEach((d) => {
-        msg += `• ${d.label}: -${fmt.format(d.amount || 0)}\n`;
-      });
-      msg += `Ahorro: -${fmt.format(totalDescuentos)}\n`;
+      msg += `Descuento: -${fmt.format(totalDescuentos)}\n`;
     }
 
-    msg += `\n💰 *Total:* ${fmt.format(grandTotal)}\n`;
-
-    if (entrega === "Entrega en pueblo (domicilio variable)") {
-      msg += `⚠️ *Domicilio:* se suma aparte según zona.\n`;
-    }
-
-    msg += `\nGracias. Quedamos atentos para confirmar. 🙌`;
+    msg += `Total: ${fmt.format(grandTotal)}\n`;
 
     return msg;
   }, [
@@ -237,7 +232,7 @@ export default function CartDrawer({
         return;
       }
 
-      const extra = orderId ? `\n\n🔢 *Código de pedido:* ${orderId}` : "";
+      const extra = orderId ? `\nCódigo: ${orderId}` : "";
       const finalMsg = mensajeWA + extra;
 
       const WAnum = "526971029287";
