@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium transition; }
+  .btn-primary { @apply btn bg-nicos-accent text-white hover:bg-nicos-dark; }
+  .btn-ghost { @apply btn bg-white/90 hover:bg-white border border-black/10; }
+
+  .card { @apply bg-white rounded-2xl shadow-soft border border-black/5; }
+
+  .tab-btn { @apply px-3 py-1.5 rounded-full border text-sm transition; }
+  .tab-btn-active { @apply bg-nicos-accent text-white border-nicos-accent; }
+  .tab-btn-inactive { @apply bg-white text-nicos-dark border-black/10 hover:bg-nicos-cream2; }
+}

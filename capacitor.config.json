@@ -1,0 +1,6 @@
+{
+  "appId": "com.nicos.togo",
+  "appName": "Nico's To Go",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
