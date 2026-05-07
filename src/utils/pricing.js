@@ -1,23 +1,23 @@
 // src/utils/pricing.js
 import { PRECIO_MITAD_POLLO } from "../data/menu";
 
-// Calcula precio según opciones elegidas en `data`
+// Calcula precio segÃƒÆ’Ã‚Âºn opciones elegidas en `data`
 export function getPrecioProd(prod, data = {}) {
-  // 🎉 PROMO: Si el producto tiene la bandera promoPizza250, precio fijo
+  // ÃƒÂ°Ã…Â¸Ã…Â½Ã¢â‚¬Â° PROMO: Si el producto tiene la bandera promoPizza250, precio fijo
   if (prod.promoPizza250 === true) {
     return 125; // Cada pizza de la promo cuesta $125
   }
 
-  // Pizzas con tamaño + orilla (precio es matriz [[normal,rellena], ...])
+  // Pizzas con tamaÃƒÆ’Ã‚Â±o + orilla (precio es matriz [[normal,rellena], ...])
   if (
     Array.isArray(prod.precio) &&
     prod.precio.length &&
     Array.isArray(prod.precio[0]) &&
-    prod.opciones?.tamaño &&
+    prod.opciones?.tamano &&
     prod.opciones?.orilla
   ) {
-    const tam = data.tamaño || prod.opciones.tamaño[0];
-    const idx = Math.max(0, prod.opciones.tamaño.indexOf(tam));
+    const tam = data.tamano || prod.opciones.tamano[0];
+    const idx = Math.max(0, prod.opciones.tamano.indexOf(tam));
     const orilla = data.orilla || "Normal";
     let base = orilla === "Rellena" ? prod.precio[idx][1] : prod.precio[idx][0];
 
@@ -28,16 +28,16 @@ export function getPrecioProd(prod, data = {}) {
     return base;
   }
 
-  // Pizzas con tamaño + orilla usando arreglos separados:
-  // `precio` = normal por tamaño, `precioOrillaRellena` = rellena por tamaño
+  // Pizzas con tamaÃƒÆ’Ã‚Â±o + orilla usando arreglos separados:
+  // `precio` = normal por tamaÃƒÆ’Ã‚Â±o, `precioOrillaRellena` = rellena por tamaÃƒÆ’Ã‚Â±o
   if (
     Array.isArray(prod.precio) &&
-    prod.opciones?.tamaño &&
+    prod.opciones?.tamano &&
     prod.opciones?.orilla &&
     !Array.isArray(prod.precio[0])
   ) {
-    const tam = data.tamaño || prod.opciones.tamaño[0];
-    const idx = Math.max(0, prod.opciones.tamaño.indexOf(tam));
+    const tam = data.tamano || prod.opciones.tamano[0];
+    const idx = Math.max(0, prod.opciones.tamano.indexOf(tam));
     const orilla = data.orilla || "Normal";
 
     let base =
@@ -52,10 +52,10 @@ export function getPrecioProd(prod, data = {}) {
     return base;
   }
 
-  // Productos con tamaño pero sin orilla (precio es array plano)
-  if (Array.isArray(prod.precio) && prod.opciones?.tamaño && !Array.isArray(prod.precio[0])) {
-    const tam = data.tamaño || prod.opciones.tamaño[0];
-    const idx = Math.max(0, prod.opciones.tamaño.indexOf(tam));
+  // Productos con tamaÃƒÆ’Ã‚Â±o pero sin orilla (precio es array plano)
+  if (Array.isArray(prod.precio) && prod.opciones?.tamano && !Array.isArray(prod.precio[0])) {
+    const tam = data.tamano || prod.opciones.tamano[0];
+    const idx = Math.max(0, prod.opciones.tamano.indexOf(tam));
     return prod.precio[idx] ?? prod.precio[0];
   }
 
@@ -69,7 +69,7 @@ export function getPrecioProd(prod, data = {}) {
   if (data && typeof data === 'object') {
     Object.values(data).forEach(valor => {
       if (typeof valor === 'string' && valor.includes('+$')) {
-        // Extraer el número después de +$
+        // Extraer el nÃƒÆ’Ã‚Âºmero despuÃƒÆ’Ã‚Â©s de +$
         const match = valor.match(/\+\$(\d+)/);
         if (match && match[1]) {
           precioBase += parseInt(match[1], 10);

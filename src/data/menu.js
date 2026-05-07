@@ -51,8 +51,8 @@ export const MENU = [
         extras: [ { nombre: "Aderezo Extra", precio: 10, opciones: ["Ranch", "Chipotle", "BBQ", "Blue Cheese"] } ]
       },
       { 
-        nombre: "Cubo de queso con papas, verdura y ranch", 
-        precio: 90,
+        nombre: "Dedos de queso con papas, verdura y ranch", 
+        precio: 100,
         desc: "Queso fundido servido con papas crujientes, verduras frescas y salsa ranch. ¡El favorito para compartir!"
       },
       { 
@@ -62,7 +62,7 @@ export const MENU = [
       },
       { 
         nombre: "Papas adobadas gajo", 
-        precio: 90,
+        precio: 100,
         desc: "Gajos de papa con un toque de adobo casero. Rústicas y llenas de sabor. Te van a encantar."
       },
       { 
@@ -77,13 +77,13 @@ export const MENU = [
       },
       {
         nombre: "Guacamole",
-        precio: 90,
+        precio: 80,
         desc: "Guacamole fresco preparado al momento. Elige banderita (con pico de gallo) o con queso fundido encima.",
         opciones: { tipo: ["Banderita", "Queso"] }
       },
       {
         nombre: "Queso fundido",
-        precio: 250,
+        precio: 225,
         desc: "Queso fundido con tu proteína favorita. Servido con tortillas recién hechas.",
         opciones: { 
           tipo: ["Camarón", "Arrachera"],
@@ -105,12 +105,14 @@ export const MENU = [
       {
         nombre: "Suchiles",
         precio: 100,
-        desc: "Chile caribe, philadelphia, tampico, ingrediente a elegir (camarón, res o pollo), coronado con gratinado y cebollín."
+        desc: "Chile caribe, philadelphia, tampico, ingrediente a elegir (camarón, res o pollo), coronado con gratinado y cebollín.",
+        opciones: { proteina: ["Camarón", "Res", "Pollo"] }
       },
       {
         nombre: "Rollitos",
         precio: 90,
-        desc: "Rellenos de philadelphia, camarón, res o pollo."
+        desc: "Rellenos de philadelphia, camarón, res o pollo.",
+        opciones: { proteina: ["Camarón", "Res", "Pollo"] }
       }
     ]
   },
@@ -121,7 +123,7 @@ export const MENU = [
       {
         nombre: "Yakimeshi",
         precio: 125,
-        desc: "Arroz frito con verdura, res, pollo y tocino, coronado con tampico, anguila y ajonjoli­."
+        desc: "Arroz frito con verdura, res, pollo y tocino, coronado con tampico, anguila y ajonjolí."
       },
       {
         nombre: "Yakimeshi especial",
@@ -187,12 +189,14 @@ export const MENU = [
       {
         nombre: "California roll",
         precio: 135,
-        desc: "Philadelphia, pepino, aguacate, alga, pollo o res, coronado con gratinado y tampico."
+        desc: "Philadelphia, pepino, aguacate, alga, pollo o res, coronado con gratinado y tampico.",
+        opciones: { proteina: ["Pollo", "Res"] }
       },
       {
         nombre: "Bonneles roll",
         precio: 140,
-        desc: "Philadelphia, pepino, aguacate, alga, pollo, coronado con bonneles (BBQ, búfalo o mango habanero)."
+        desc: "Philadelphia, pepino, aguacate, alga, pollo, coronado con bonneles (BBQ, búfalo o mango habanero).",
+        opciones: { salsa: ["BBQ", "Búfalo", "Mango Habanero"] }
       },
     
     ]
@@ -219,12 +223,14 @@ export const MENU = [
       {
         nombre: "Cevichito roll",
         precio: 165,
-        desc: "Philadelphia, pepino, aguacate, alga, camarón, coronado con ceviche especial del chef (crudo, cocido o mixto)."
+        desc: "Philadelphia, pepino, aguacate, alga, camarón, coronado con ceviche especial del chef (crudo, cocido o mixto).",
+        opciones: { tipo: ["Crudo", "Cocido", "Mixto"] }
       },
       {
         nombre: "Aguachile roll",
         precio: 165,
-        desc: "Philadelphia, pepino, aguacate, alga, camarón, coronado con aguachile especial del chef (crudo, cocido o mixto)."
+        desc: "Philadelphia, pepino, aguacate, alga, camarón, coronado con aguachile especial del chef (crudo, cocido o mixto).",
+        opciones: { tipo: ["Crudo", "Cocido", "Mixto"] }
       }
     ]
   },
@@ -280,12 +286,12 @@ export const MENU = [
         desc: "Huevos preparados como más te gusten, acompañados de frijoles, chilaquiles o papa horneada. Incluye tortillas.",
         precio: 110,
         opciones: { 
-          preparación: ["Revueltos", "Estrellados", "Divorciados", "Rancheros", "A la mexicana"],
-          acompañamiento: ["Frijol", "Chilaquiles", "Papa horneada"] 
+          preparacion: ["Revueltos", "Estrellados", "Divorciados", "Rancheros", "A la mexicana"],
+          acompanamiento: ["Frijol", "Chilaquiles", "Papa horneada"] 
         },
         extras: [ 
           { nombre: "Extra Huevo", precio: 15, opciones: ["Revuelto", "Estrellado", "Cocido"] },
-          { nombre: "Aguacate", precio: 15 }
+          { nombre: "Aguacate", precio: 10 }
         ]
       },
       {
@@ -315,7 +321,7 @@ export const MENU = [
       desc: "Machaca tradicional acompañada de frijoles o chilaquiles. Incluye tortillas recién hechas.",
       precio: 150,
       opciones: {
-          acompañamiento: ["Frijol", "Chilaquiles"]
+        acompanamiento: ["Frijol", "Chilaquiles"]
       },
       extras: [
         { nombre: "Extra Huevo", precio: 15, opciones: ["Revuelto", "Estrellado", "Cocido"] },
@@ -359,7 +365,7 @@ export const MENU = [
         precio: 130, 
         desc: "2 piezas de pan francés con un huevo preparado a tu gusto y fruta de temporada. Desayuno completo.",
         opciones: { 
-          preparaciónHuevo: ["Revuelto", "Estrellado", "Cocido"]
+          preparacionHuevo: ["Revuelto", "Estrellado", "Cocido"]
         },
         extras: [ 
           { nombre: "Extra Huevo", precio: 15, opciones: ["Revuelto", "Estrellado", "Cocido"] },
@@ -380,7 +386,7 @@ export const MENU = [
         precio: 130, 
         desc: "3 hotcakes con 2 huevos preparados a tu gusto, fruta fresca y yoghurt. El desayuno perfecto.",
         opciones: { 
-          preparaciónHuevo: ["Revueltos", "Estrellados", "Cocidos"]
+          preparacionHuevo: ["Revueltos", "Estrellados", "Cocidos"]
         },
         extras: [ 
           { nombre: "Extra Huevo", precio: 10, opciones: ["Revuelto", "Estrellado", "Cocido"] },
@@ -414,11 +420,11 @@ export const MENU = [
 },
 { 
   nombre: "Sandwich Triple", 
-  precio: 75,
+  precio: 85,
   desc: "Sandwich triple con jamón, queso amarillo, lechuga, tomate, aguacate y vegetales frescos. Servido con papas francesas."
 },
       { 
-        nombre: "Papas", 
+        nombre: "Papas para acompañar", 
         precio: 25,
         desc: "Porción de papas francesas para acompañar tu desayuno favorito."
       }
@@ -435,7 +441,7 @@ export const MENU = [
       precio: [140, 170, 195, 300],
       precioOrillaRellena: [165, 205, 249, 390],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"],
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"],
         orilla: ["Normal", "Rellena"],
         ingredientes: [
           "Salchicha",
@@ -459,7 +465,7 @@ export const MENU = [
       desc: "Pechuga de pollo a la plancha con salsa a elegir: BBQ, Búfalo, Mango Habanero, Ciruela o Tamarindo.",
       precio: [180, 245, 275, 380],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"],
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"],
         salsa: ["BBQ", "Búfalo", "Mango Habanero", "Ciruela", "Tamarindo"]
       }
     },
@@ -469,17 +475,17 @@ export const MENU = [
       desc: "Boneless crujientes preparados con la salsa de tu preferencia.",
       precio: [215, 245, 325, 420],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"],
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"],
         salsa: ["BBQ", "Búfalo", "Mango Habanero", "Ciruela", "Tamarindo"]
       }
     },
 
     {
-      nombre: "Pizza Camarones",
+      nombre: "Pizza Camarón",
       desc: "Camarón al mojo de ajo con cebolla y pimiento.",
       precio: [210, 255, 295, 420],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"]
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"]
       }
     },
 
@@ -488,7 +494,7 @@ export const MENU = [
       desc: "Pepperoni, champiñón, aceituna negra, pimiento, cebolla y queso parmesano.",
       precio: [155, 190, 220, 330],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"]
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"]
       }
     },
 
@@ -497,7 +503,7 @@ export const MENU = [
       desc: "Combinación especial de la casa con ingredientes selectos y balanceados.",
       precio: [160, 210, 250, 390],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"]
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"]
       }
     },
 
@@ -506,7 +512,7 @@ export const MENU = [
       desc: "Chilorio con cebolla y cilantro.",
       precio: [150, 190, 220, 330],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"]
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"]
       }
     },
 
@@ -515,7 +521,7 @@ export const MENU = [
       desc: "Champiñón, cebolla, pimiento y aceituna negra.",
       precio: [150, 190, 220, 330],
       opciones: {
-        tamaño: ["Personal", "Mediana", "Familiar", "Cuadrada"]
+        tamano: ["Personal", "Mediana", "Familiar", "Cuadrada"]
       }
     },
 
@@ -539,7 +545,7 @@ export const MENU = [
         desc: "La clásica ensalada Nico's con lechuga, zanahoria, pepino, crutones, pasta, pollo a la plancha y queso parmesano.",
         precio: [120, 150],
         opciones: { 
-          tamaño: ["Chica", "Grande"]
+          tamano: ["Chica", "Grande"]
         },
         extras: [ 
           { nombre: "Aderezo Extra", precio: 10, opciones: ["Ranch", "Cilantro", "Miel Mostaza"] }
@@ -556,7 +562,7 @@ export const MENU = [
       { 
         nombre: "Ensalada Vegetales", 
         desc: "Mezcla fresca de lechugas, pepino, zanahoria rallada y pimiento morrón. Ligera y refrescante.", 
-        precio: 100,
+        precio: 110,
         extras: [ 
           { nombre: "Aderezo Extra", precio: 10, opciones: ["Ranch", "César", "Vinagreta", "Miel Mostaza"] }
         ]
@@ -570,10 +576,10 @@ export const MENU = [
         nombre: "Fusilli", 
         desc: "Pasta fusilli en salsa de tomate casera con queso. Acompañada de pan de ajo.", 
         precio: 140,
-        opciones: { proteína: ["Sin pollo", "Con pollo +$30"] }
+        opciones: { proteina: ["Sin pollo", "Con pollo +$30"] }
       },
       {
-        nombre: "Fusilli Alfredo",
+        nombre: "Fettuccini Alfredo",
         desc: "Pasta fettuccini en nuestra cremosa salsa Alfredo casera. Acompañada de pan de ajo.",
         precio: 180
       }
@@ -589,41 +595,41 @@ export const MENU = [
         nombre: "Combo Pizza", 
         desc: "Ensalada chica + 2 rebanadas de pizza tradicional + bebida. ¡El combo perfecto para una persona!", 
         precio: 170, 
-        opciones: { bebida: ["Jamaica", "Té de la Casa"] } 
+        opciones: { bebida: ["Jamaica", "Té de la casa"] } 
       },
       { 
         nombre: "Combo Baguette", 
         desc: "Ensalada chica + 1/4 de baguette de tu elección + bebida. Combo completo y delicioso.", 
         precio: 170, 
-        opciones: { bebida: ["Jamaica", "Té de la Casa"] } 
+        opciones: { bebida: ["Jamaica", "Té de la casa"] } 
       },
       { 
         nombre: "Nikito Pizza", 
         desc: "2 rebanadas de pizza con porción de ensalada + bebida. Ideal para niños o antojo rápido.", 
         precio: 95, 
-        opciones: { bebida: ["Jamaica", "Té de la Casa"] } 
+        opciones: { bebida: ["Jamaica", "Té de la casa"] } 
       },
       { 
         nombre: "Nikito Baguette", 
         desc: "1/4 de baguette con papas + bebida. Perfecto para los pequeños.", 
         precio: 95, 
-        opciones: { bebida: ["Jamaica", "Té de la Casa"] } 
+        opciones: { bebida: ["Jamaica", "Té de la casa"] } 
       },
       { 
         nombre: "VIP Nico's", 
         desc: "1/4 de baguette + 1/2 orden de boneless con salsa a elegir + bebida. ¡El combo VIP más completo!", 
-        precio: 130, 
+        precio: 135, 
         opciones: { 
-          bebida: ["Jamaica", "Té de la Casa"],
+          bebida: ["Jamaica", "Té de la casa"],
           salsa: ["BBQ", "Buffalo", "Mango", "Mango Habanero"]
         } 
       }
     ]
   },
 
-  // ================== Baguettes y burger ==================
+  // ================== Burger y Baguettes ==================
   {
-    nombre: "Baguettes y burger",
+    nombre: "Burger y Baguettes",
     icon: "🍔",
     productos: [
       { 
@@ -634,6 +640,12 @@ export const MENU = [
           punto: ["Término medio", "Bien cocida"],
           extras: ["Queso (+$10)", "Tocino (+$15)", "Doble carne (+$30)"]
         }
+      },
+       { 
+        nombre: "Hamburguesa PRO", 
+        desc: "Hamburguesa de res + 150g de boneless con salsa a elegir + papas. ¡El combo más completo para los que tienen hambre!", 
+        precio: 175, 
+        opciones: { salsa: ["BBQ", "Buffalo", "Mango Habanero"] } 
       },
       { 
         nombre: "Hamburguesa Guacamole", 
@@ -665,13 +677,8 @@ export const MENU = [
         nombre: "Baguette Arrachera", 
         desc: "Baguette con carne arrachera suave, queso chihuahua, lechuga y salsa mexicana con aguacate. Con papas.", 
         precio: 170 
-      },
-      { 
-        nombre: "Hamburguesa PRO", 
-        desc: "Hamburguesa de res + 150g de boneless con salsa a elegir + papas. ¡El combo más completo para los que tienen hambre!", 
-        precio: 175, 
-        opciones: { salsa: ["BBQ", "Buffalo", "Mango Habanero"] } 
       }
+     
     ]
   },
 
@@ -682,12 +689,12 @@ export const MENU = [
     productos: [
       { 
         nombre: "Aguachile", 
-        precio: 200,
+        precio: 205,
         desc: "Camarón fresco marinado en limón con chile verde, pepino y cebolla morada. Picante al gusto. Refrescante y explosivo."
       },
       { 
         nombre: "Aguachile Mixto (Cocido y crudo)", 
-        precio: 225,
+        precio: 230,
         desc: "Mezcla de camarón crudo y cocido marinado en limón con chile verde, pepino y cebolla morada. Lo mejor de ambos mundos."
       },
       { 
@@ -700,22 +707,22 @@ export const MENU = [
       },
       { 
         nombre: "Camarones Rancheros", 
-        precio: 180,
+        precio: 185,
         desc: "Camarones salteados con salsa ranchera casera: tomate, cebolla, chile y especias. Servidos con arroz o guarnición."
       },
       { 
         nombre: "Camarones al Mojo de Ajo", 
-        precio: 180,
+        precio: 185,
         desc: "Camarones dorados en mantequilla con ajo fresco y especias. Sabor intenso y aromático. Servidos con arroz."
       },
       { 
-        nombre: "Brocheta de camarón", 
-        precio: 220,
-        desc: "Brocheta de camarones marinados y asados a la parrilla con pimientos y cebolla. Con arroz o papas."
+        nombre: "Carne Arrachera", 
+        precio: 160,
+        desc: "Incluye frijol,salsa y quesadilla."
       },
       { 
         nombre: "Brocheta de pollo", 
-        precio: 220,
+        precio: 200,
         desc: "Brocheta de pollo marinado a la parrilla con verduras frescas. Suave, jugosa y llena de sabor. Con arroz o papas."
       },
       { 
@@ -734,7 +741,7 @@ export const MENU = [
       { 
         nombre: "Crepa Sencilla", 
         desc: "Crepa suave rellena de 2 ingredientes a tu elección. Deliciosa y versátil.", 
-        precio: 60, 
+        precio: 55, 
         opciones: { 
           ingredientes: ["Queso Philadelphia", "Cajeta", "Mermelada", "Nutella", "Lechera", "Fresa", "Miel con Philadelphia"], 
           maxIngredientes: 2 
@@ -743,7 +750,7 @@ export const MENU = [
       { 
         nombre: "Crepa Especial", 
         desc: "Crepa con 2 ingredientes a elegir + nieve de vainilla y fruta fresca. La crepa premium.", 
-        precio: 85, 
+        precio: 90, 
         opciones: { 
           ingredientes: ["Queso Philadelphia", "Cajeta", "Mermelada", "Nutella", "Lechera", "Fresa", "Miel con Philadelphia"], 
           maxIngredientes: 2 
@@ -760,7 +767,7 @@ export const MENU = [
       { 
         nombre: "Coctel de Fruta", 
         desc: "Fruta fresca de temporada con yoghurt, lechera y granola crujiente. Refrescante, saludable y delicioso.", 
-        precio: 100 
+        precio: 95 
       }
     ]
   },
@@ -772,24 +779,24 @@ export const MENU = [
       {
         nombre: "Frappuccino",
         desc: "Bebida helada cremosa en 7 deliciosos sabores: Cajeta, Oreo, Moka, Nutella, Choco Chip, M&M o Caramelo. ¡Tu capricho favorito!",
-        precio: [50, 80],
+        precio: [50, 85],
         opciones: {
-          tamaño: ["Chica", "Grande"],
+          tamano: ["Chica", "Grande"],
           sabor: ["Cajeta", "Oreo", "Moka", "Nutella", "Choco Chip", "M&M", "Caramelo"]
         },
         extras: [{ nombre: "Topping Extra", precio: 10 }]
       },
       {
         nombre: "Malteada de Fresa",
-        precio: [55, 95],
+        precio: [55, 85],
         desc: "Malteada cremosa de fresa natural. Espesa, fría y deliciosa.",
-        opciones: { tamaño: ["Chica", "Grande"] }
+        opciones: { tamano: ["Chica", "Grande"] }
       },
       {
         nombre: "Malteada de Nutella (Con fresa)",
         precio: [60, 95],
         desc: "Malteada de nutella con trozos de fresa fresca. Una combinación perfecta.",
-        opciones: { tamaño: ["Chica", "Grande"] }
+        opciones: { tamano: ["Chica", "Grande"] }
       }
     ]
   },
@@ -800,30 +807,30 @@ export const MENU = [
       {
         nombre: "Licuado",
         desc: "Licuado natural con 2 frutas a elegir. Puedes agregar granola, miel o avena por solo $10 extra.",
-        precio: [48, 75],
+        precio: [45, 80],
         opciones: {
-          tamaño: ["1/2 Litro", "1 Litro"],
+          tamano: ["1/2 Litro", "1 Litro"],
           frutas: ["Plátano", "Manzana", "Papaya", "Fresa", "Chocomilk"],
           maxFrutas: 2
         }
       },
       {
         nombre: "Jugo de Naranja Natural",
-        precio: [45, 80],
+        precio: [45, 85],
         desc: "Jugo de naranja recién exprimido. 100% natural y lleno de vitamina C.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       },
       {
         nombre: "Jugo Verde",
         precio: [55, 85],
         desc: "Jugo verde con apio, pepino, piña y limón. Detox, refrescante y saludable.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       },
       {
         nombre: "Jugo Betabel",
         precio: [55, 85],
         desc: "Jugo de betabel con naranja y zanahoria. Energizante, saludable y delicioso.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       }
     ]
   },
@@ -839,25 +846,25 @@ export const MENU = [
         nombre: "Naranjada",
         precio: [30, 45],
         desc: "Agua fresca de naranja. Dulce, natural y refrescante.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       },
       {
         nombre: "Limonada",
         precio: [30, 45],
         desc: "Limonada natural con azúcar. Clásica, refrescante y perfecta para el calor.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       },
       {
         nombre: "Fresa-Limón",
         precio: [40, 80],
         desc: "Agua fresca de fresa con limón. Dulce, ácida y muy refrescante.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       },
       {
         nombre: "Kiwi-Limón",
         precio: [40, 80],
         desc: "Agua fresca de kiwi con limón. Exótica, diferente y refrescante.",
-        opciones: { tamaño: ["1/2 Litro", "1 Litro"] }
+        opciones: { tamano: ["1/2 Litro", "1 Litro"] }
       }
     ]
   },
@@ -867,7 +874,7 @@ export const MENU = [
     productos: [
       { nombre: "Café Americano", precio: 38, desc: "Café americano recién preparado. Caliente y aromático." },
       { nombre: "Capuchino", precio: 75, desc: "Capuchino cremoso con espuma de leche. Suave y reconfortante." },
-      { nombre: "Café a las Rocas", precio: 70, desc: "Café frío servido con hielo. Refrescante y energizante." }
+      { nombre: "Café a las Rocas", precio: 68, desc: "Café frío servido con hielo. Refrescante y energizante." }
     ]
   },
 

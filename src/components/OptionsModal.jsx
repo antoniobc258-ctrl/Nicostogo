@@ -188,10 +188,10 @@ export default function OptionsModal({
 
   // ====== UI Pizza Tradicional con CARDS ======
   const PizzaTradUI = () => {
-    const tamaños = prod.opciones?.tamaño || [];
+    const tamanos = prod.opciones?.tamano || [];
     const maxPorTam = prod.opciones?.maxIngredientes || {};
     const baseIngs = prod.opciones?.ingredientes || [];
-    const tam = data.tamaño || tamaños[0];
+    const tam = data.tamano || tamanos[0];
     const tamInfo = PIZZA_SIZES_INFO[tam] || {};
     const esPersonal = tam === "Personal";
     const maxIng = maxPorTam[tam] || tamInfo.maxIngredientes || 2;
@@ -209,7 +209,7 @@ export default function OptionsModal({
             🍕 PASO 1: Elige tu tamaño
           </h3>
           <div className="grid grid-cols-2 gap-3">
-            {tamaños.map((t, idx) => {
+            {tamanos.map((t, idx) => {
               const info = PIZZA_SIZES_INFO[t] || {};
               const isSelected = tam === t;
               const precioBase = Array.isArray(prod.precio?.[idx]) ? prod.precio[idx][0] : prod.precio?.[idx] || 0;
@@ -218,7 +218,7 @@ export default function OptionsModal({
                 <button
                   key={t}
                   type="button"
-                  onClick={() => setField("tamaño", t)}
+                  onClick={() => setField("tamano", t)}
                   className={`relative p-3 rounded-2xl border-2 transition-all text-left ${
                     isSelected 
                       ? "border-red-600 bg-red-50 shadow-lg" 
